@@ -2,8 +2,6 @@
     <NewSweepstake v-if="showNewSweepstake" ref="newSweepstake" @Sweepstake="sweepstake"
         @CloseNewSweepstake="closeNewSweepstake" />
 
-
-    <button id="buttonNewSweepstake" @click="newSweepstake()"> Novo Sorteio </button>
     <div id="sortedTeams">
         <div id="teams">
             <div id="team1">
@@ -14,13 +12,15 @@
                             width="100" height="100">
                     </div>
                 </div>
-                
+
                 <div id="blueTeamParticipants">
                     <div class="blueTeam" v-for="participant in teams[0]">
                         {{ participant.toUpperCase() }}
                     </div>
                 </div>
             </div>
+
+            <button id="buttonNewSweepstake" @click="newSweepstake()">  </button>
 
             <div id="team2">
                 <div id="redTeamParticipants">
@@ -156,20 +156,26 @@ img {
 */
 
 #buttonNewSweepstake {
-    justify-self: center;
+    position: absolute;
+    top: 54%;
+    left: 50.1%;
+    transform: translate(-50%, -50%);
     font-family: 'Belanosima', sans-serif;
     font-size: 14px;
     padding: 10px;
-    width: 120px;
-    height: 60px;
-    background-color: #1abe22;
-    box-shadow: 0px 0px 1px 1px #d2c6ff;
-    border-radius: 5px;
-    color: aliceblue;
+    width: 400px;
+    height: 90px;
+    background-color: #fff98a20;
+    box-shadow: 1px 1px 10px 1px inset #ffffff;
+    border-radius: 45px;
+    transition: 800ms;
+    border-color: aliceblue;
 }
 
 #buttonNewSweepstake:hover {
-    background-color: #19971f;
+    background-color: #fbff0320;
+    border-color: #dfdfdf;
+    box-shadow: 1px 1px 10px 5px inset #fff98ad0;
 }
 
 #teamGenerate {
