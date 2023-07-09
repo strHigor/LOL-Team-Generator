@@ -102,7 +102,7 @@ export default {
 
     mounted() {
         this.allParticipants = localStorage.getItem("participants").split(",");
-        this.dices = localStorage.getItem("dices");
+        this.dices = Number(localStorage.getItem("dices"));
         this.openModal();
     }
 }
