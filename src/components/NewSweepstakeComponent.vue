@@ -42,7 +42,7 @@ export default {
             allParticipants: '',
             name: '',
             dices: 0,
-            participants: ['Felipe', 'Murilo', 'Higor', 'FC', 'Gustavo', 'Paulino', 'Gabus', 'Rodrigo', 'Random 1', 'Random 2'],
+            participants: [],
             teams: [],
             champions: [],
         }
@@ -73,6 +73,8 @@ export default {
 
                 if (teste == true) {
                     resolve(Array.getChampions());
+                    localStorage.setItem("participants", this.allParticipants);
+                    localStorage.setItem("dices", this.dices);
                 } else {
                     reject("No");
                 }
@@ -99,7 +101,8 @@ export default {
     },
 
     mounted() {
-        this.allParticipants = this.participants;
+        this.allParticipants = localStorage.getItem("participants").split(",");
+        this.dices = localStorage.getItem("dices");
         this.openModal();
     }
 }
