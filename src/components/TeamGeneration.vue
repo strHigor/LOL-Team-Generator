@@ -4,7 +4,7 @@
 
     <div id="sortedTeams">
         <div id="teams">
-            <div id="team1">
+            <div id="team1" v-if="champions.length > 0 && teams.length > 0">
                 <div id="blueTeamChampions">
                     <div v-for="champion in champions[0]">
                         <h5> {{ champion }} </h5>
@@ -20,9 +20,9 @@
                 </div>
             </div>
 
-            <button id="buttonNewSweepstake" @click="newSweepstake()">  </button>
+            <button id="buttonNewSweepstake" @click="newSweepstake()"> </button>
 
-            <div id="team2">
+            <div id="team2" v-if="champions.length > 0 && teams.length > 0">
                 <div id="redTeamParticipants">
                     <div class="redTeam" v-for="participant in teams[1]">
                         {{ participant.toUpperCase() }}
@@ -76,6 +76,12 @@ export default {
 <style scoped>
 img {
     box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.51);
+}
+
+#sortedTeams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #team1 {
@@ -157,7 +163,7 @@ img {
 
 #buttonNewSweepstake {
     position: absolute;
-    top: 54%;
+    top: 54.7%;
     left: 50.1%;
     transform: translate(-50%, -50%);
     font-family: 'Belanosima', sans-serif;
