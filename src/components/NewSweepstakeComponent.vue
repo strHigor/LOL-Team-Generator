@@ -39,10 +39,9 @@ export default {
     emits: ['Sweepstake', 'CloseNewSweepstake'],
     data() {
         return {
-            allParticipants: '',
+            allParticipants: [],
             name: '',
             dices: 0,
-            participants: [],
             teams: [],
             champions: [],
         }
@@ -101,8 +100,12 @@ export default {
     },
 
     mounted() {
-        this.allParticipants = localStorage.getItem("participants").split(",");
-        this.dices = Number(localStorage.getItem("dices"));
+        if (localStorage.length > 1) {
+            this.allParticipants = localStorage.getItem("participants").split(",");
+            this.dices = Number(localStorage.getItem("dices"));
+        }
+
+
         this.openModal();
     }
 }
