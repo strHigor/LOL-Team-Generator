@@ -1,6 +1,8 @@
 import axios from 'axios';
+import MersenneTwister from './mersenne-twister'
 
 export default {
+    
     removeValue(values, valueToRemove) {
         var sortedArray = [];
 
@@ -17,11 +19,12 @@ export default {
         //console.log(array);
         let sortedArray = array.map((x) => x);
         let currentIndex = sortedArray.length, randomIndex;
+        let mersenne = new MersenneTwister();
         // While there remain elements to shuffle.
         while (currentIndex != 0) {
 
             // Pick a remaining element.
-            randomIndex = Math.floor(Math.random() * currentIndex);
+            randomIndex = Math.floor(mersenne.random() * currentIndex);
             currentIndex--;
 
             // And swap it with the current element.
@@ -68,9 +71,9 @@ export default {
         quantity--;
         let sortedIndex = [];
         let sortedChampions = [];
-
+        let mersenne = new MersenneTwister();
         for (let i = 0; i <= quantity; i++) {
-            const newIndex = Math.floor(Math.random() * champions.length);
+            const newIndex = Math.floor(mersenne.random() * champions.length);
             if (!sortedIndex.includes(newIndex)) {
                 if (champions[newIndex] === undefined) {
                     i--;
