@@ -7,7 +7,7 @@
             <div id="team1" v-if="champions.length > 0 && teams.length > 0">
                 <div id="blueTeamChampions">
                     <div v-for="champion in champions[0]">
-                        <img v-bind:src="'http://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/' + champion + '.png'"
+                        <img v-bind:src="'../../../public/images/' + champion + '.png'"
                             width="100" height="100">
                         <div id="champion">
                             <h5> {{ champion }} </h5>
@@ -33,7 +33,7 @@
 
                 <div id="redTeamChampions">
                     <div v-for="champion in champions[1]">
-                        <img v-bind:src="'http://ddragon.leagueoflegends.com/cdn/13.12.1/img/champion/' + champion + '.png'"
+                        <img v-bind:src="'../../../public/images/' + champion + '.png'"
                             width="100" height="100">
                         <div id="champion">
                             <h5> {{ champion }} </h5>
