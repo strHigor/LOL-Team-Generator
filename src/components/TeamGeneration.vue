@@ -1,7 +1,6 @@
 <template>
     <NewSweepstake v-if="showNewSweepstake" ref="newSweepstake" @Sweepstake="sweepstake"
         @CloseNewSweepstake="closeNewSweepstake" />
-
     <div id="sortedTeams">
         <div id="teams">
             <div id="team1" v-if="champions.length > 0 && teams.length > 0">
@@ -22,8 +21,7 @@
                 </div>
             </div>
 
-            <button id="buttonNewSweepstake" @click="newSweepstake()"> </button>
-
+            
             <div id="team2" v-if="champions.length > 0 && teams.length > 0">
                 <div id="redTeamParticipants">
                     <div class="redTeam" v-for="participant in teams[1]">
@@ -66,13 +64,12 @@ export default {
             this.champions = sweepstake[1];
         },
 
-        newSweepstake() {
-            this.showNewSweepstake = true;
-        },
-
         closeNewSweepstake(visible) {
             this.showNewSweepstake = visible;
         }
+    },
+    mounted() {
+        this.showNewSweepstake = true;
     }
 }
 </script>
@@ -199,29 +196,6 @@ img {
     margin-top: 28px;
 }
 */
-
-#buttonNewSweepstake {
-    position: absolute;
-    top: 54.7%;
-    left: 50.1%;
-    transform: translate(-50%, -50%);
-    font-family: 'Belanosima', sans-serif;
-    font-size: 14px;
-    padding: 10px;
-    width: 400px;
-    height: 90px;
-    background-color: #fff98a20;
-    box-shadow: 1px 1px 10px 1px inset #ffffff;
-    border-radius: 45px;
-    transition: 800ms;
-    border-color: aliceblue;
-}
-
-#buttonNewSweepstake:hover {
-    background-color: #fbff0320;
-    border-color: #dfdfdf;
-    box-shadow: 1px 1px 10px 5px inset #fdd54dd0;
-}
 
 #teamGenerate {
     background-color: rgb(112, 112, 112);

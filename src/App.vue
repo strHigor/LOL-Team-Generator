@@ -1,21 +1,30 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <header>
     <div class="menu">
       <nav>
-        <RouterLink to="/">Home</RouterLink>
+        <button id="menuButton" @click="newSweepstake()"> Novo Sorteio </button>
       </nav>
     </div>
     <RouterView />
   </header>
 </template>
 
-<style scoped>
-.menu {
+<script>
+export default {
+  methods: {
+    newSweepstake() {
+      window.location.href = "/";
+    }
+  }
 }
+</script>
+
+<style scoped>
+header {
+  gap: 10px;
+}
+
+.menu {}
 
 header {
   line-height: 1.5;
@@ -45,6 +54,26 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+#menuButton {
+  font-family: 'Belanosima', sans-serif;
+  font-size: 17px;
+  color: #c7c7c7;
+  text-shadow: 2px 2px 2px #212121;
+  width: 100px;
+  height: 60px;
+  background-color: #fff98a20;
+  box-shadow: 1px 1px 10px 1px inset #ffffff;
+  border-radius: 5px;
+  transition: 800ms;
+  border-color: aliceblue;
+}
+
+#menuButton:hover {
+  background-color: #fbff0320;
+  border-color: #dfdfdf;
+  box-shadow: 1px 1px 10px 5px inset #fdd54dd0;
 }
 
 @media (min-width: 1024px) {
